@@ -1,0 +1,7 @@
+auth        [success=1 default=ignore] pam_access.so accessfile=/etc/security/access-local.conf
+auth        required pam_oath.so usersfile=/etc/users.oath window=30
+
+
+auth        required      pam_unix.so nullok try_first_pass
+auth        [success=1 default=ignore] pam_access.so accessfile=/etc/security/access-local.conf
+auth        sufficient    pam_oath.so usersfile=/etc/users.oath window=30

@@ -11,5 +11,6 @@ Run `oath-setup` one time on your system to set up OATH authentication.
 3. `/etc/ssh/sshd_config` will be modified to include `ChallengeResponseAuthentication yes` and sshd will be restarted (Assumes that `/etc/ssh/sshd.config` has not been modified in another way)
 4. Creates `/etc/users.oath` - this file is where each user's TOTP key is stored
 5. Creates `/etc/security/access-local.conf` - this file defines who is asked for a TOTP token upon login.  By default no console users are asked for a token, only SSH users.
-6. Creates the PAM rules for oath in file `/etc/pam.d/oath` and creates a softlink at`/etc/pam.d/oath-sshd`
-7. edits `/etc/pam.d/sshd` to include `/etc/pam.d/oath-sshd` int he rulset processed for sshd logins
+6. Creates the PAM rules for oath in file `/etc/pam.d/oath` and creates a symlink at`/etc/pam.d/oath-sshd`
+7. Edits `/etc/pam.d/sshd` to include `/etc/pam.d/oath-sshd` in the rulset processed for sshd logins.
+8. 
